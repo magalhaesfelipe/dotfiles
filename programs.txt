@@ -4,3 +4,8 @@ micro
 wezterm
 windhawk
 windscript - windows debloater
+bruno
+beekeeper
+vscode
+zed
+nvim
