@@ -1,0 +1,6 @@
+ahk
+git/bash-shell
+micro
+wezterm
+windhawk
+windscript - windows debloater
