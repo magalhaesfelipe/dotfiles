@@ -1,0 +1,6 @@
+# Execute powershell and set the user's documents directory.
+# Bruno on windows uses the default windows' documents folder.
+# Usually it's on onedrive `<USER>/onedrive/Documents`.
+# This command sets the default windows' documents folder to `<USER>/docs`
+
+powershell.exe -NoProfile -Command 'Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" -Name Personal -Value "%USERPROFILE%\docs"'
