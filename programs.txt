@@ -10,7 +10,8 @@ beekeeper
 vscode
 zed
 nvim
-node
+node/npm
+pnpm
 go
 rust
 python
