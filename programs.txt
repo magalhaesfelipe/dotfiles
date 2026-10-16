@@ -1,4 +1,5 @@
 ahk
+powertoys
 git/bash-shell
 micro
 wezterm
