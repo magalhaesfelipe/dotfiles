@@ -1,0 +1,134 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [],
+  "autoHideWindow": false,
+  "centerOnLaunch": false,
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+  "initialCols": 80,
+  "initialPosition": "340,40",
+  "initialRows": 20,
+  "keybindings": [
+    {
+      "id": "Terminal.CopyToClipboard",
+      "keys": "ctrl+c"
+    },
+    {
+      "id": "Terminal.PasteFromClipboard",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "Terminal.FindText",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "id": "Terminal.DuplicatePaneAuto",
+      "keys": "alt+shift+d"
+    }
+  ],
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "colorScheme": "My custom",
+      "cursorShape": "filledBox",
+      "elevate": true,
+      "opacity": 87,
+      "startingDirectory": "%USERPROFILE%"
+    },
+    "list": [
+      {
+        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": false,
+        "name": "Windows PowerShell"
+      },
+      {
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "Command Prompt"
+      },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": false,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure"
+      },
+      {
+        "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+        "hidden": false,
+        "name": "Git Bash",
+        "source": "Git"
+      },
+      {
+        "guid": "{94fb2fc2-4e31-5129-aee9-82912d86e982}",
+        "hidden": false,
+        "name": "Developer Command Prompt for VS 18",
+        "source": "Windows.Terminal.VisualStudio"
+      },
+      {
+        "guid": "{c3ade7fc-7be8-5ceb-bac9-65708f03903a}",
+        "hidden": false,
+        "name": "Developer PowerShell for VS 18",
+        "source": "Windows.Terminal.VisualStudio"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#000000",
+      "black": "#0C0C0C",
+      "blue": "#0037DA",
+      "brightBlack": "#767676",
+      "brightBlue": "#3B78FF",
+      "brightCyan": "#61D6D6",
+      "brightGreen": "#16C60C",
+      "brightPurple": "#B4009E",
+      "brightRed": "#E74856",
+      "brightWhite": "#F2F2F2",
+      "brightYellow": "#F9F1A5",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#3A96DD",
+      "foreground": "#FFFFFF",
+      "green": "#13A10E",
+      "name": "Color Scheme 15",
+      "purple": "#881798",
+      "red": "#C50F1F",
+      "selectionBackground": "#FFFFFF",
+      "white": "#CCCCCC",
+      "yellow": "#C19C00"
+    },
+    {
+      "background": "#1D2021",
+      "black": "#0C0C0C",
+      "blue": "#0037DA",
+      "brightBlack": "#767676",
+      "brightBlue": "#3B78FF",
+      "brightCyan": "#61D6D6",
+      "brightGreen": "#16C60C",
+      "brightPurple": "#B4009E",
+      "brightRed": "#E74856",
+      "brightWhite": "#F2F2F2",
+      "brightYellow": "#F9F1A5",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#3A96DD",
+      "foreground": "#FFFFFF",
+      "green": "#13A10E",
+      "name": "My custom",
+      "purple": "#881798",
+      "red": "#C50F1F",
+      "selectionBackground": "#FFFFFF",
+      "white": "#CCCCCC",
+      "yellow": "#C19C00"
+    }
+  ],
+  "theme": "dark",
+  "themes": [],
+  "useAcrylicInTabRow": true
+}
