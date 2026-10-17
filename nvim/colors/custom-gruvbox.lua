@@ -2,7 +2,8 @@
 -- Paste into init.lua (after plugins), then run: vim.cmd.colorscheme("micro-gruvbox")
 
 local c = {
-  bg        = "#1d2021",
+  bg = "NONE",
+  -- bg        = "#1d2021",
   fg        = "#ebdbb2",
   comment   = "#928374",
   symbol    = "#d79921",
@@ -58,7 +59,7 @@ hl("Search",       { fg = c.search_fg, bg = c.search_bg })
 hl("IncSearch",    { fg = c.search_fg, bg = c.search_bg, bold = true })
 hl("CurSearch",    { fg = c.search_fg, bg = c.search_bg, bold = true })
 hl("Pmenu",        { fg = c.fg, bg = c.cursorln })
-hl("PmenuSel",     { fg = c.bg, bg = c.ident })
+hl("PmenuSel",     { fg = "#1d2021", bg = c.ident })
 hl("PmenuSbar",    { bg = c.cursorln })
 hl("PmenuThumb",   { bg = c.ui_bg })
 hl("StatusLine",   { fg = c.ident, bg = c.ui_bg })
