@@ -1,9 +1,9 @@
-﻿#SingleInstance force
+#SingleInstance force
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-; 
+
 ; Request admin privileges if not already elevated
 if not A_IsAdmin
 {
@@ -34,3 +34,14 @@ return
     SendInput, {LWin Down}{Down Down}
     SendInput, {Down Up}{LWin Up}
 return
+
+; Emojis:
+:*:skull`t::💀
+:*:cry`t::😭
+:*:demon`t::😈
+:*:badass`t::😎
+:*:peaceout`t::😎✌️
+:*:cold`t::🥶
+:*:red`t::🟥
+:*:ok`t::👍
+
