@@ -1,4 +1,4 @@
--- ============================================================================
+﻿-- ============================================================================
 -- INIT.LUA - SINGLE-FILE NEOVIM CONFIG
 -- ============================================================================
 
@@ -13,38 +13,11 @@ vim.g.maplocalleader = " "
 -- ----------------------------------------------------------------------------
 local o = vim.opt
 
--- LINE NUMBERS (first, last, current, every 10th)
+-- LINE NUMBERS
 o.number = true
-o.relativenumber = false
+o.relativenumber = true
 
-function _G.sparse_lnum()
-  local lnum = vim.v.lnum
-  local last = vim.api.nvim_buf_line_count(0)
-  local cur = vim.api.nvim_win_get_cursor(0)[1]
-  if vim.v.virtnum ~= 0 then return "" end -- wrapped lines
-  if lnum == 1 or lnum == last or lnum == cur or lnum % 10 == 0 then
-    return string.format("%" .. #tostring(last) .. "d", lnum)
-  end
-  return ""
-end
-
-o.statuscolumn = "%s%=%{v:lua.sparse_lnum()} "
--- LINE NUMBERS (first, last, current, every 10th)
-o.number = true
-o.relativenumber = false
-
-function _G.sparse_lnum()
-  local lnum = vim.v.lnum
-  local last = vim.api.nvim_buf_line_count(0)
-  local cur = vim.api.nvim_win_get_cursor(0)[1]
-  if vim.v.virtnum ~= 0 then return "" end -- wrapped lines
-  if lnum == 1 or lnum == last or lnum == cur or lnum % 10 == 0 then
-    return string.format("%" .. #tostring(last) .. "d", lnum)
-  end
-  return ""
-end
-
-o.statuscolumn = "%s%=%{v:lua.sparse_lnum()} "-- INDENTATION
+-- INDENTATION
 o.expandtab = true
 o.shiftwidth = 2
 o.tabstop = 2
@@ -60,7 +33,8 @@ o.termguicolors = true
 o.cursorline = true
 o.signcolumn = "yes"
 o.scrolloff = 8
-o.wrap = false
+o.wrap = true
+o.linebreak = true
 
 -- BEHAVIOR
 o.clipboard = "unnamedplus"
@@ -132,6 +106,18 @@ require("lazy").setup({
       vim.cmd.colorscheme("gruvbox")
     end,
   },
+  {
+    "2nthony/vitesse.nvim",
+      dependencies = { "tjdevries/colorbuddy.nvim" },
+      priority = 1000,
+      config = function()
+      require("vitesse").setup({
+        comment_italics = false,
+        transparent_background = true,
+      })
+      vim.cmd.colorscheme("vitesse")
+      end,
+  },
 
   -- CENTERED LAYOUT
   {
@@ -139,4 +125,32 @@ require("lazy").setup({
     opts = { width = 100 },
   },
 
+  -- SCROLLBARS (VERTICAL + HORIZONTAL)
+  -- {
+  --   "mihovilrak/scroll.nvim",
+  --   opts = {},
+  -- },
+  
 })
+-- INDENTATION
+
+-- KEYMAPS
+vim.keymap.set("n", "<C-a>", "ggVG", { desc = "SELECT ALL" })
+vim.keymap.set("v", "<C-c>", "y", { desc = "COPY SELECTION" })
+vim.keymap.set("n", "<BS>", "<cmd>e $MYVIMRC<CR>", { desc = "EDIT CONFIG" })
+vim.keymap.set("n", "<leader>m", "<cmd>ScrollMinimapToggle<CR>", { desc = "TOGGLE MINIMAP" })
+vim.keymap.set("n", "<C-x>", "dd", { desc = "CUT LINE" })
+vim.keymap.set("x", "<C-x>", "d", { desc = "CUT SELECTION" })
+vim.keymap.set({ "n", "i", "x" }, "<C-s>", "<cmd>w<CR><Esc>", { desc = "SAVE FILE" })
+
+function _G.StatusCol()
+  local lnum = vim.v.lnum
+  local last = vim.api.nvim_buf_line_count(0)
+  local text = ""
+  if vim.v.virtnum == 0 and (vim.v.relnum == 0 or lnum == 1 or lnum == last or lnum % 10 == 0) then
+    text = tostring(lnum)
+  end
+  return "%s%=" .. text .. " "
+end
+
+vim.opt.statuscolumn = "%!v:lua.StatusCol()"
