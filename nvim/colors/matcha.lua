@@ -1,5 +1,5 @@
 -- Matcha: a muted green dark colorscheme for Neovim
--- Windows location: ~/AppData/Local/nvim/colors/matcha.lua  (Windows)
+-- Windows location: ~/AppData/Local/nvim/colors/matcha.lua
 -- Options (set before :colorscheme matcha):
 --   vim.g.matcha_transparent = false   -- solid background (default: true)
 --   vim.g.matcha_italic = true         -- italic comments, params, etc. (default: false)
