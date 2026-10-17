@@ -11,7 +11,7 @@ config.default_prog = {
 -- config.default_cwd = "C:\\Users\\rgm-79N"
 
 -- Window
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
 
 config.window_padding = {
