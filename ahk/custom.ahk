@@ -11,6 +11,24 @@ if not A_IsAdmin
     ExitApp  ; Exit current script instance
 }
 
+; ---- ScrollLock indicator ----
+Gui, SL:New, +AlwaysOnTop -Caption +ToolWindow +E0x20 +LastFound
+Gui, SL:Color, 1E1E1E
+Gui, SL:Font, s14 bold cLime, Segoe UI
+Gui, SL:Add, Text, ,🔦
+WinSet, Transparent, 220
+Gui, SL:Show, x20 y20 NoActivate Hide
+
+SetTimer, UpdateIndicator, 100
+return
+
+UpdateIndicator:
+    if GetKeyState("ScrollLock", "T")
+        Gui, SL:Show, NoActivate
+    else
+        Gui, SL:Hide
+return
+
 ; We remap CapsLock to ScrollLock with powertoys, to avoid
 ; capital case mistyping when toggling navigation mode(h,j,k,l)
 ; KEYBINDINGS:
@@ -44,4 +62,4 @@ return
 :*:cold`t::🥶
 :*:red`t::🟥
 :*:ok`t::👍
-
+:*:fire`t::🔥
