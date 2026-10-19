@@ -15,7 +15,7 @@ if not A_IsAdmin
 Gui, SL:New, +AlwaysOnTop -Caption +ToolWindow +E0x20 +LastFound
 Gui, SL:Color, 1E1E1E
 Gui, SL:Font, s14 bold cLime, Segoe UI
-Gui, SL:Add, Text, ,🔦
+Gui, SL:Add, Text, ,###
 WinSet, Transparent, 220
 Gui, SL:Show, x20 y20 NoActivate Hide
 
