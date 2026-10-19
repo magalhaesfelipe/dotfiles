@@ -155,17 +155,18 @@ vim.keymap.set({ "n", "i", "x" }, "<C-s>", "<cmd>w<CR><Esc>", { desc = "SAVE FIL
 
 vim.keymap.set("n", "<leader>t", '<cmd>botright split | resize 12 | terminal "C:/Program Files/Git/bin/bash.exe" -i<CR>', { desc = "OPEN SPLIT TERMINAL" })
 
-function _G.StatusCol()
-  local lnum = vim.v.lnum
-  local last = vim.api.nvim_buf_line_count(0)
-  local text = ""
-  if vim.v.virtnum == 0 and (vim.v.relnum == 0 or lnum == 1 or lnum == last or lnum % 10 == 0) then
-    text = tostring(lnum)
-  end
-  return "%s%=" .. text .. " "
-end
-
-vim.opt.statuscolumn = "%!v:lua.StatusCol()"
+-- INTERVAL LINE NUMBERS(10TH)
+-- function _G.StatusCol()
+--   local lnum = vim.v.lnum
+--   local last = vim.api.nvim_buf_line_count(0)
+--   local text = ""
+--   if vim.v.virtnum == 0 and (vim.v.relnum == 0 or lnum == 1 or lnum == last or lnum % 10 == 0) then
+--     text = tostring(lnum)
+--   end
+--   return "%s%=" .. text .. " "
+-- end
+--
+-- vim.opt.statuscolumn = "%!v:lua.StatusCol()"
 
 vim.opt.fillchars = { horiz = "─", horizup = "┴", horizdown = "┬", vert = "│", vertleft = "┤", vertright = "├", verthoriz = "┼" }
 
