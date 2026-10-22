@@ -1,0 +1,12 @@
+return {
+  "dmtrKovalenko/fff.nvim",
+  build = function()
+    -- downloads a prebuilt binary, or falls back to cargo build
+    require("fff.download").download_or_build_binary()
+  end,
+  opts = {},
+  lazy = false, -- the plugin lazy-initialises itself
+  keys = {
+    { "ff", function() require("fff").find_files() end, desc = "FFFind files" },
+  },
+}
