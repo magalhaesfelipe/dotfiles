@@ -1,9 +1,0 @@
-# set the default color theme in the config.toml
-mkdir -p "$APPDATA/helix"
-echo 'theme = "gruvbox-transparent"' > "$APPDATA/helix/config.toml"
-
-# check the file's content
-cat "$APPDATA/helix/config.toml"
-
-- If Helix is installed with `winget`, it will look custom
-themes in ~/AppData/Roaming/helix/themes
