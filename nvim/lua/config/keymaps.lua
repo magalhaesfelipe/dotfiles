@@ -33,3 +33,12 @@ map("n", "<C-BS>", "<cmd>e $MYVIMRC<CR>", { desc = "EDIT CONFIG" })
 -- Layout / terminal
 map("n", "<leader>m", "<cmd>NoNeckPain<CR>", { desc = "TOGGLE NO-NECK-PAIN LAYOUT" })
 map("n", "<leader>t", '<cmd>botright split | resize 12 | terminal "C:/Program Files/Git/bin/bash.exe" -i<CR>', { desc = "OPEN SPLIT TERMINAL" })
+
+-- Move current line up/down in Normal mode
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { silent = true })
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { silent = true })
+
+-- Move selected block up/down in Visual mode
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
+
