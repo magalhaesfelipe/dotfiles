@@ -5,8 +5,10 @@ map("i", "jk", "<Esc>")
 
 -- File actions
 map("n", "<leader>w", "<cmd>w<CR>", { desc = "SAVE FILE" })
-map("n", "<leader>q", "<cmd>q<CR>", { desc = "QUIT" })
 map({ "n", "i", "x" }, "<C-s>", "<cmd>w<CR><Esc>", { desc = "SAVE FILE" })
+
+-- Quit neovim
+map("n", "<leader>q", "<cmd>q<CR>", { desc = "QUIT" })
 
 -- Clear search highlight
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
