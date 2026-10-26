@@ -479,4 +479,3 @@ window_title_bar_inactive_background
 window_title_bar_inactive_foreground
 window_title_bar_min_windows
 window_title_template
-
