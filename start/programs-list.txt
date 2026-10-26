@@ -1,0 +1,15 @@
+# pacman
+sudo pacman -S --needed \
+  kitty
+  fastfetch
+  tty-clock
+  eza
+  git
+  ttf-jetbrains-mono-nerd
+  ttf-nerd-fonts-symbols
+  wl-clipboard
+  tmux
+
+# AUR (yay -S)
+yay -S --needed \
+  oh-my-posh-bin
