@@ -15,4 +15,3 @@ require("config.keymaps")
 require("config.autocmds")
 require("config.lazy")
 require("config.ui") -- after lazy so the colorscheme is available
-
