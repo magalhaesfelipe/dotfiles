@@ -1,41 +1,32 @@
-export PATH="$HOME:$PATH"
-# if [ "$PWD" = "$HOME" ]; then
-#   cd /c/tree/projects
-# fi
+#    _               _              
+#   | |__   __ _ ___| |__  _ __ ___ 
+#   | '_ \ / _` / __| '_ \| '__/ __|
+#  _| |_) | (_| \__ \ | | | | | (__ 
+# (_)_.__/ \__,_|___/_| |_|_|  \___|
+# 
 
-# ─────────────────────────────────────────────
-# Colors
-# ─────────────────────────────────────────────
+# It's possible to define a custom configuration by adding
+# files in ~/.config/bashrc 
+# or by creating a folder ~/.config/bashrc/custom
+# with copies of files from ~/.config/bashrc 
+# And also create a .bashrc_custom file in your home directory
+# -----------------------------------------------------
 
-RESET='\[\e[0m\]'
+# -----------------------------------------------------
+# Load modular configuration
+# -----------------------------------------------------
 
-FG='\[\e[38;2;235;219;178m\]'
-GIT='\[\e[38;2;217;119;87m\]'
-# FG='\[\e[38;2;245;231;204m\]'
-# GOLD='\[\e[38;2;138;90;16m\]'
-
-# ─────────────────────────────────────────────
-# Git branch
-# ─────────────────────────────────────────────
-
-parse_git_branch() {
-    local branch
-    branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-
-    if [[ -n "$branch" ]]; then
-        echo "[$branch]"
+for f in ~/.config/bashrc/*; do 
+    if [ ! -d $f ]; then
+        c=`echo $f | sed -e "s=.config/bashrc=.config/bashrc/custom="`
+        [[ -f $c ]] && source $c || source $f
     fi
-}
+done
 
-# ─────────────────────────────────────────────
-# Prompt
-# ─────────────────────────────────────────────
+# -----------------------------------------------------
+# Load single customization file (if exists)
+# -----------------------------------------------------
 
-PS1="${FG}\w${RESET} ${GIT}\$(parse_git_branch)${RESET} "
-
-# ─────────────────────────────────────────────
-# ls
-# ─────────────────────────────────────────────
-
-alias ls='ls -F --color=auto --show-control-chars'
-export LS_COLORS="di=38;2;251;73;52:ow=38;2;251;73;52:tw=38;2;251;73;52:st=38;2;251;73;52"
+if [ -f ~/.bashrc_custom ]; then
+    source ~/.bashrc_custom
+fi
