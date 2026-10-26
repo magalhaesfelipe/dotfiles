@@ -29,3 +29,7 @@ o.undofile = true
 o.updatetime = 250
 o.splitright = true
 o.splitbelow = true
+
+o.showmode = false
+-- o.showcmd = false
+o.ruler = false
