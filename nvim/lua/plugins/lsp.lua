@@ -1,18 +1,16 @@
 return {
-  -- tools
   {
     "williamboman/mason.nvim",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "stylua",
-        "selene",
-        "luacheck",
-        "shellcheck",
-        "shfmt",
-        "tailwindcss-language-server",
-        "typescript-language-server",
-        "css-lsp",
-      })
-    end,
+    config = true,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "neovim/nvim-lspconfig" },
+    opts = {
+      ensure_installed = {
+        "vtsls", "tailwindcss", "cssls", "html",
+        "emmet_language_server", "eslint",
+      },
+    },
   },
 }
