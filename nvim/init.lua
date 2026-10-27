@@ -2,6 +2,16 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.diagnostic.config({
+  virtual_lines = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+  -- Only show virtual text for errors, not warnings/hints
+  virtual_text = { severity = vim.diagnostic.severity.ERROR }
+})
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "kitty",
   callback = function()
