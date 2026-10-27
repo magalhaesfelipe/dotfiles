@@ -37,20 +37,20 @@ map("n", "<leader>m", "<cmd>NoNeckPain<CR>", { desc = "TOGGLE NO-NECK-PAIN LAYOU
 map("n", "<leader>t", '<cmd>botright split | resize 12 | terminal "C:/Program Files/Git/bin/bash.exe" -i<CR>', { desc = "OPEN SPLIT TERMINAL" })
 
 -- Move current line up/down in Normal mode
-map("n", "<A-k>", ":m .-2<CR>==", { silent = true })
-map("n", "<A-j>", ":m .+1<CR>==", { silent = true })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { silent = true })
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { silent = true })
 
 -- Move selected block up/down in Visual mode
-map("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
-map("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
 
 -- Toggle terminal
-map({ "n", "t" }, [[<C-\>]], "<cmd>ToggleTerm<CR>", { desc = "TOGGLE TERMINAL", silent = true })
+vim.keymap.set({ "n", "t" }, [[<C-\>]], "<cmd>ToggleTerm<CR>", { desc = "TOGGLE TERMINAL", silent = true })
 
-map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics" })
-map("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end)
-map("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end)
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics" })
+vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end)
+vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end)
 
 -- Oil vim - File explorer
-map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
