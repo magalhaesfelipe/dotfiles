@@ -1,0 +1,15 @@
+# Link the dotfiles config directories to the local
+~/.config directory using the command `ln`:
+
+ln -s <source_dir> <destination_dir>
+
+e,g:
+
+# kitty
+ln -s ~/example/dotfiles/kitty ~/.config/kitty
+
+# nvim
+ln -s ~/example/dotfiles/nvim ~/.config/nvim
+
+# bash
+ln -s ~/example/dotfiles/bash ~/.config/bash
