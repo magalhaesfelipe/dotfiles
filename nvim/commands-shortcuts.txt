@@ -1,0 +1,5 @@
+# Vertical split
+:vs
+
+# Resize one split Vertically
+:vertical resize <number_of_columns>
