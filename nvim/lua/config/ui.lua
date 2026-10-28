@@ -3,7 +3,8 @@ vim.opt.fillchars = {
   vert = "│", vertleft = "┤", vertright = "├", verthoriz = "┼",
 }
 
-vim.cmd.colorscheme("custom-gruvbox")
+vim.g.alabaster_transparent = true
+vim.cmd.colorscheme("alabaster-v2")
 
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7d9b76", bg = "NONE" })
 
