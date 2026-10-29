@@ -1,10 +1,11 @@
 # -----------------------------------------------------
 # CUSTOMIZATION
 # -----------------------------------------------------
-POSH=agnoster
+# POSH=agnoster
+FILE_PATH="$HOME/projects/dotfiles/ohmyposh/zen.toml"
 
 # -----------------------------------------------------
 # Prompt
 # -----------------------------------------------------
-eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/zen.toml)"
+eval "$(oh-my-posh init bash --config "$FILE_PATH")"
 # eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/EDM115-newline.omp.json)"
