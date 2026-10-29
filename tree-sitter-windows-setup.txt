@@ -1,0 +1,86 @@
+TREE-SITTER + NVIM-TREESITTER SETUP ON WINDOWS (Git Bash)
+=========================================================
+
+PROBLEM
+-------
+Neovim error:
+  Parser could not be created for buffer N and language "typescript"
+  Error during "tree-sitter build": ENOENT: no such file or directory (cmd): 'tree-sitter'
+  Installed 0/1 languages
+
+ROOT CAUSE
+----------
+Two missing pieces:
+1. The `tree-sitter` executable was not a native Windows .exe
+   (npm install produced a .cmd shell script that Neovim cannot exec).
+2. No C compiler was available for nvim-treesitter to build parsers.
+
+
+STEP 1 - INSTALL A C COMPILER (MinGW GCC via WinLibs)
+-----------------------------------------------------
+Run in Git Bash:
+
+  winget install --id=BrechtSanders.WinLibs.POSIX.UCRT -e
+
+Then CLOSE the terminal completely and open a NEW Git Bash window.
+Verify:
+
+  gcc --version
+
+Expected: gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 16.2.0
+
+
+STEP 2 - GET A NATIVE tree-sitter.exe
+-------------------------------------
+Do NOT use the npm-installed tree-sitter (it is a .cmd script).
+
+1. Download from:
+   https://github.com/tree-sitter/tree-sitter/releases/latest
+   File: tree-sitter-windows-x64.exe
+
+2. Rename it to: tree-sitter.exe
+
+3. Move it to: C:\Users\<you>\.bin\
+   (create the folder if it does not exist)
+
+4. Verify in a NEW Git Bash window:
+
+  where tree-sitter
+  tree-sitter --version
+
+Expected:
+  C:\Users\<you>\.bin\tree-sitter.exe
+  tree-sitter 0.28.0
+
+
+STEP 3 - BUILD THE TYPESCRIPT PARSER IN NEOVIM
+----------------------------------------------
+In the same Git Bash window:
+
+  export CC=gcc
+  nvim
+
+Inside Neovim:
+
+  :TSInstall typescript
+  :TSInstall tsx
+
+Verify:
+
+  :checkhealth nvim-treesitter
+
+Look for:
+  - typescript / tsx listed as installed parsers
+  - C compiler detected as gcc
+
+
+NOTES
+-----
+- The `CC` variable must be exported in the SAME shell that launches nvim.
+  Check with:  echo $CC   (should print: gcc)
+- If it still fails, confirm the nvim-treesitter branch:
+    master branch is the most stable on Windows.
+    In lazy.nvim config:
+      { "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" }
+- To persist the compiler setting, add this to the top of init.lua:
+      vim.env.CC = "gcc"
