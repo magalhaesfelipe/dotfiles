@@ -17,7 +17,23 @@ sections = {
       icon_only = true,
       padding = { right = 0, left = 2 },
     },
-    { "filename", path = 1 },
+    { 
+      "filename", 
+      path = 1,
+      fmt = function(str)
+      if vim.bo.filetype ~= "oil" then
+        return str
+      end
+      -- 去掉 oil:// 前缀，得到绝对路径
+      local path = str:gsub("^oil://", "")
+      -- 把 $HOME 替换成 ~
+      local home = vim.env.HOME
+      if home and path:sub(1, #home) == home then
+        path = "~" .. path:sub(#home + 1)
+      end
+      return path
+      end, 
+    },
     {
       "tabs",
       mode = 2,
