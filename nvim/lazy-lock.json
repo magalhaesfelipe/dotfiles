@@ -26,6 +26,7 @@
   "olive-crt.nvim": { "branch": "main", "commit": "eaf42899fb2970bb5857bb7fa617fcaa96365e20" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "solarized-osaka.nvim": { "branch": "main", "commit": "a21176efde15fab21fabda0bf2ba123ed6d7332d" },
+  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "46ae9b3c8f3039e96ff4497d190ad0aee091f30d" },
   "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
   "vitesse.nvim": { "branch": "main", "commit": "1e00ee10a7ac23426684f43be80eb3edf92c082c" }
 }
