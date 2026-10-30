@@ -4,9 +4,9 @@ vim.opt.fillchars = {
 }
 
 vim.g.alabaster_transparent = true
-vim.cmd.colorscheme("alabaster-v2")
+vim.cmd.colorscheme("toge")
 
-vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7d9b76", bg = "NONE" })
+-- vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7d9b76", bg = "NONE" })
 
 -- Interval line numbers (every 10th)
 -- function _G.StatusCol()
