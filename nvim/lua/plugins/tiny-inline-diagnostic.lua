@@ -6,7 +6,7 @@ return {
     require("tiny-inline-diagnostic").setup({
       preset = "minimal",
       options = {
-        severity = { vim.diagnostic.severity.ERROR }, -- errors only, like your current setup
+        -- severity = { vim.diagnostic.severity.ERROR }, -- errors only, like your current setup
         multilines = { enabled = false },
         overflow = { mode = "oneline" },
       },
