@@ -16,7 +16,7 @@
 # Load modular configuration
 # -----------------------------------------------------
 
-BASHRC_DIR="$HOME/projects/dotfiles/bash/bashrc"
+BASHRC_DIR="$HOME/dotfiles/bash/bashrc"
 
 for f in "$BASHRC_DIR"/*; do 
     if [ ! -d $f ]; then

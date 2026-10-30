@@ -2,7 +2,7 @@
 # CUSTOMIZATION
 # -----------------------------------------------------
 # POSH=agnoster
-FILE_PATH="$HOME/projects/dotfiles/ohmyposh/zen.toml"
+FILE_PATH="$HOME/dotfiles/ohmyposh/zen.toml"
 
 # -----------------------------------------------------
 # Prompt
