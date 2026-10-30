@@ -47,6 +47,7 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
 -- Toggle terminal
 vim.keymap.set({ "n", "t" }, [[<C-\>]], "<cmd>ToggleTerm<CR>", { desc = "TOGGLE TERMINAL", silent = true })
 
+-- Toggle the floating box with diagnostic, showing errors, warnings etc. 0_0 pretty useful
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics" })
 vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end)
 vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end)
