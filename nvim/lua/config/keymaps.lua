@@ -55,3 +55,12 @@ vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end)
 -- Oil vim - File explorer
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+-- Git signs previews
+vim.keymap.set("n", "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>", { desc = "Preview hunk" })
+vim.keymap.set("n", "<leader>hi", "<cmd>Gitsigns preview_hunk_inline<cr>", { desc = "Preview hunk inline" })
+vim.keymap.set("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<cr>", { desc = "Toggle deleted lines" })
+vim.keymap.set("n", "<leader>hd", "<cmd>Gitsigns diffthis<cr>", { desc = "Diff this" })
+
+-- Git signs undo
+vim.keymap.set("n", "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", { desc = "Reset hunk" })
+vim.keymap.set("v", "<leader>hr", ":Gitsigns reset_hunk<cr>", { desc = "Reset selected lines" })
