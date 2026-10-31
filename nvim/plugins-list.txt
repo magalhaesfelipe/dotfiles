@@ -1,0 +1,80 @@
+Neovim plugin list
+==================
+Command to list installed plugins (run in a shell):
+
+    jq -r 'keys[]' ~/dotfiles/nvim/lazy-lock.json
+
+or open :Lazy inside nvim.
+
+Core
+----
+- LazyVim - the distribution itself (defaults, keymaps, options, plugin specs)
+- lazy.nvim - plugin manager
+- snacks.nvim - utility collection (picker, explorer, dashboard, notifier, indent, terminal, etc.)
+- plenary.nvim - Lua helper library used by many plugins
+- nui.nvim - UI component library (used by noice)
+
+UI
+--
+- which-key.nvim - popup showing available keymaps after <leader>
+- noice.nvim - nicer cmdline, messages and notifications UI
+- nvim-notify - notifications
+- lualine.nvim - statusline
+- bufferline.nvim - buffer tabs at the top
+- incline.nvim - floating statuslines per window
+- indent-blankline.nvim - indent guides
+- mini.icons - icon provider
+- nvim-web-devicons - file icons
+- tiny-inline-diagnostic.nvim - inline diagnostics display
+- no-neck-pain.nvim - center the focused buffer with side padding
+
+Colorschemes
+------------
+- tokyonight.nvim - default LazyVim colorscheme
+- catppuccin - colorscheme
+- alabaster.nvim - colorscheme
+- gruvbox.nvim - colorscheme
+- olive-crt.nvim - colorscheme
+- solarized-osaka.nvim - colorscheme
+- vitesse.nvim - colorscheme
+- colorbuddy.nvim - helper library for building colorschemes
+
+Editor
+------
+- nvim-tree.lua - file tree explorer
+- oil.nvim - edit the filesystem like a buffer
+- fff.nvim - fast file finder
+- flash.nvim - fast jump/search navigation
+- trouble.nvim - diagnostics, quickfix and references list
+- todo-comments.nvim - highlight and search TODO/FIXME comments
+- persistence.nvim - session restore
+- gitsigns.nvim - git signs in the gutter, hunk actions, blame
+- grug-far.nvim - project-wide search and replace
+- toggleterm.nvim - toggleable terminal windows
+- ccc.nvim - color picker and color highlighter
+- vim-matchup - enhanced % matching for brackets, tags and keywords
+
+Coding
+------
+- blink.cmp - completion engine
+- blink-cmp-dictionary - dictionary completion source for blink.cmp
+- friendly-snippets - snippet collection
+- mini.pairs - auto-close brackets and quotes
+- nvim-autopairs - auto-close brackets and quotes
+- mini.ai - extended text objects
+- ts-comments.nvim - treesitter-aware comment strings
+- lazydev.nvim - Lua LSP support for editing Neovim configs
+
+LSP / Formatting / Linting
+--------------------------
+- nvim-lspconfig - LSP client configs
+- mason.nvim - installer for LSP servers, formatters, linters
+- mason-lspconfig.nvim - bridge between Mason and lspconfig
+- conform.nvim - formatting
+- nvim-lint - linting
+
+Treesitter
+----------
+- nvim-treesitter - syntax highlighting, indent, parsers
+- nvim-treesitter-textobjects - treesitter-based text objects
+- nvim-ts-autotag - auto-close/rename HTML/JSX tags
