@@ -13,4 +13,13 @@ return {
       },
     },
   },
+  -- Add this block to stop nvim-lspconfig from re-enabling virtual text
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      diagnostics = {
+        virtual_text = false,
+      },
+    },
+  },
 }
