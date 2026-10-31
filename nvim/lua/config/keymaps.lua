@@ -34,7 +34,8 @@ map("n", "<C-BS>", "<cmd>e $MYVIMRC<CR>", { desc = "EDIT CONFIG" })
 
 -- Layout / terminal
 map("n", "<leader>m", "<cmd>NoNeckPain<CR>", { desc = "TOGGLE NO-NECK-PAIN LAYOUT" })
-map("n", "<leader>t", '<cmd>botright split | resize 12 | terminal "C:/Program Files/Git/bin/bash.exe" -i<CR>', { desc = "OPEN SPLIT TERMINAL" })
+map("n", "<leader>t", '<cmd>botright split | resize 12 | terminal "C:/Program Files/Git/bin/bash.exe" -i<CR>',
+  { desc = "OPEN SPLIT TERMINAL" })
 
 -- Move current line up/down in Normal mode
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { silent = true })
@@ -64,3 +65,11 @@ vim.keymap.set("n", "<leader>hd", "<cmd>Gitsigns diffthis<cr>", { desc = "Diff t
 -- Git signs undo
 vim.keymap.set("n", "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", { desc = "Reset hunk" })
 vim.keymap.set("v", "<leader>hr", ":Gitsigns reset_hunk<cr>", { desc = "Reset selected lines" })
+
+-- Global string search (content), not file names
+map("n", "<leader>fg", function() require("fff").live_grep() end, { desc = "LIVE GREP" })
+
+-- Search the word under cursor
+map("n", "<leader>fw", function()
+  require("fff").live_grep({ query = vim.fn.expand("<cword>") })
+end, { desc = "GREP WORD UNDER CURSOR" })
