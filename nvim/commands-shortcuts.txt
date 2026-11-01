@@ -1,5 +1,5 @@
-# Vertical split
-:vs
+gr  😎 (n) go to implementation
 
-# Resize one split Vertically
-:vertical resize <number_of_columns>
+:vs  😎 vertical split😎
+
+:vertical resize <number_of_columns> 😎 resize one vertical split
