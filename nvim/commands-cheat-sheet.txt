@@ -1,5 +1,7 @@
 gr  😎 (n) go to implementation
 
+C-w d 😎 (n) see diagnostic on floating window 
+
 :vs  😎 vertical split😎
 
 :vertical resize <number_of_columns> 😎 resize one vertical split
