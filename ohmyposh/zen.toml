@@ -1,16 +1,32 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
 version = 3
 final_space = true
 
+# toge palette (same values as the kitty / Neovim theme)
+[palette]
+  bg      = '#1a1919'
+  bg_dark = '#121212'
+  fg      = '#e8dcc4'
+  green   = '#4d9375'
+  entity  = '#98bb6c'
+  blue    = '#6394bf'
+  orange  = '#d4976c'
+  red     = '#cb7676'
+  yellow  = '#e6cc77'
+  cyan    = '#5eaab5'
+  pink    = '#d9739f'
+
 [secondary_prompt]
   template = '❯❯ '
-  foreground = 'magenta'
+  foreground = 'p:pink'
   background = 'transparent'
 
 [transient_prompt]
   template = '❯ '
   background = 'transparent'
-  foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
+  foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:pink{{end}}']
 
 [[blocks]]
   type = 'prompt'
@@ -18,10 +34,10 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-template = "{{ if .Segments.Git.HEAD }}<#010101,transparent>\ue0b6</>{{ end }} {{ .Path }} "
-    foreground = 'blue'
+    template = "{{ if .Segments.Git.HEAD }}<#121212,transparent>\ue0b6</>{{ end }} {{ .Path }} "
+    foreground = 'p:entity'
     background = 'transparent'
-    background_templates = ['{{ if .Segments.Git.HEAD }}#010101{{ end }}']
+    background_templates = ['{{ if .Segments.Git.HEAD }}p:bg_dark{{ end }}']
     type = 'path'
     style = 'plain'
 
@@ -31,8 +47,8 @@ template = "{{ if .Segments.Git.HEAD }}<#010101,transparent>\ue0b6</>{{ end }} {
 
   [[blocks.segments]]
     template = " \ue0a0 {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>"
-    foreground = '#000000'
-    background = '#FF6600'
+    foreground = 'p:bg'
+    background = 'p:orange'
     type = 'git'
     # style = 'diamond'
     style = 'powerline'
@@ -51,7 +67,7 @@ template = "{{ if .Segments.Git.HEAD }}<#010101,transparent>\ue0b6</>{{ end }} {
 
   [[blocks.segments]]
     template = '{{ .FormattedMs }}'
-    foreground = 'yellow'
+    foreground = 'p:yellow'
     background = 'transparent'
     type = 'executiontime'
     style = 'plain'
@@ -70,7 +86,7 @@ template = "{{ if .Segments.Git.HEAD }}<#010101,transparent>\ue0b6</>{{ end }} {
     background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
+    foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:pink{{end}}']
 
     [blocks.segments.properties]
       cache_duration = 'none'
