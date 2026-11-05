@@ -277,7 +277,7 @@ local groups = {
   IblIndent                  = { fg = "#2d2c2c" },
   IblScope                   = { fg = "#454444" },
   MiniIndentscopeSymbol      = { fg = "#454444" },
-  SnacksIndentScope          = { fg = "#e2b178", nocombine = true },
+  SnacksIndentScope          = { fg = "#997a56", nocombine = true },
 
   -- which-key, lazy, misc
   WhichKey                   = { fg = c.green },
