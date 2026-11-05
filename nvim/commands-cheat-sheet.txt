@@ -1,7 +1,11 @@
-gr  😎 (n) go to implementation
+gr  -> (n) go to implementation
 
-C-w d 😎 (n) see diagnostic on floating window 
+C-w d -> (n) see diagnostic on floating window 
 
-:vs  😎 vertical split😎
+:vs  -> vertical split😎
 
-:vertical resize <number_of_columns> 😎 resize one vertical split
+:vertical resize <number_of_columns> -> resize one vertical split
+
+H -> (shift + h) navigate left tabs/buffers 
+
+L -> (shift + l) navigate right tabs/buffers 
