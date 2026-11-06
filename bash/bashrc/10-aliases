@@ -54,6 +54,11 @@ alias gcheck="git checkout"
 alias gcredential="git config credential.helper store"
 
 # -----------------------------------------------------
+# PSQL
+# -----------------------------------------------------
+# alias psql="psql -d postgres"
+
+# -----------------------------------------------------
 # Scripts
 # -----------------------------------------------------
 alias ascii='~/.config/ml4w/scripts/ml4w-ascii-header'
