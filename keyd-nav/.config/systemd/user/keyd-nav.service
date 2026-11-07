@@ -1,0 +1,9 @@
+[Unit]
+Description=keyd nav layer indicator
+
+[Service]
+ExecStart=%h/.local/bin/keyd-nav-indicator
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
