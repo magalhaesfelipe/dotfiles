@@ -8,4 +8,8 @@ C-w d -> (n) see diagnostic on floating window
 
 H -> (shift + h) navigate left tabs/buffers 
 
-L -> (shift + l) navigate right tabs/buffers 
+L -> (shift + l) navigate right tabs/buffers
+
+van -> select block
+  an -> select one level up
+  in -> select one level in
