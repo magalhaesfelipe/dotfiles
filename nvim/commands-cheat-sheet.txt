@@ -1,6 +1,6 @@
 gr  -> (n) go to implementation
 
-C-w d -> (n) see diagnostic on floating window 
+C-w d -> (n) see diagnostic on floating window(errors, warnings, suggestions, etc) 
 
 :vs  -> vertical split😎
 
