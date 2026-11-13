@@ -1,0 +1,6 @@
+# Download mp3 extracting it from the video file
+yt-dlp -x --audio-format mp3 <url>
+
+
+
+
