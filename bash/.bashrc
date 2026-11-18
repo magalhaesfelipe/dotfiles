@@ -32,3 +32,6 @@ done
 if [ -f ~/.bashrc_custom ]; then
     source ~/.bashrc_custom
 fi
+
+
+export PATH="/home/y/.local/bin:$PATH"
