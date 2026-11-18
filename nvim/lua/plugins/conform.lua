@@ -25,9 +25,9 @@ return {
       }
     },
     log_level = vim.log.levels.DEBUG,
-    format_on_save = {
-      timeout_ms = 2000,
-      lsp_fallback = true,
-    },
+    -- format_on_save = {
+    --   timeout_ms = 2000,
+    --   lsp_fallback = true,
+    -- },
   },
 }
