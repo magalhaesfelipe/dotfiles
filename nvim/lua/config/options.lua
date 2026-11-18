@@ -31,4 +31,4 @@ o.splitright = true
 o.splitbelow = true
 
 o.showcmd = true
-o.showcmdloc = "last"    
+o.showcmdloc = "last"
