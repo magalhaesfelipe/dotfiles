@@ -284,6 +284,13 @@ local groups = {
   WhichKeyGroup              = { fg = c.blue },
   LazyButton                 = { bg = c.bg_alt },
   LazyButtonActive           = { bg = c.green, fg = c.bg },
+
+  -- fff
+  FFFNormal                  = { fg = c.ui_fg, bg = c.bg_dark },
+  FFFBorder                  = { fg = c.dim, bg = c.bg_dark },
+  FFFTitle                   = { fg = c.green, bg = c.bg_dark, bold = true },
+  FFFCursor                  = { bg = c.sel },
+
 }
 
 for group, opts in pairs(groups) do hl(group, opts) end
