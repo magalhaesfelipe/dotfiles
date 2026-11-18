@@ -10,6 +10,7 @@
 
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
+# Text replacement
 matches:
   # Emojis
   - trigger: ".cold"
@@ -18,13 +19,13 @@ matches:
   - trigger: ".fire"
     replace: "🔥"
     right_word: true
- 
+
   - trigger: ".cry"
     replace: "😭"
 
   - trigger: ".badass"
     replace: "😎"
- 
+
   - trigger: ".demon"
     replace: "😈"
 
@@ -44,10 +45,8 @@ matches:
   - trigger: ".walking"
     replace: "🚶‍♂️"
     right_word: true
-
-  # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
+  - trigger: ".check"
+    replace: "✅"
 
   # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
 
