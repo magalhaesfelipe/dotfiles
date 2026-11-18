@@ -1,10 +1,24 @@
 vim.opt.fillchars = {
-  horiz = "─", horizup = "┴", horizdown = "┬",
-  vert = "│", vertleft = "┤", vertright = "├", verthoriz = "┼",
+  horiz = "─",
+  horizup = "┴",
+  horizdown = "┬",
+  vert = "│",
+  vertleft = "┤",
+  vertright = "├",
+  verthoriz = "┼",
 }
 
 vim.g.alabaster_transparent = true
-vim.cmd.colorscheme("toge")
+local theme = vim.fn.stdpath("config") .. "/theme"
+vim.cmd.colorscheme(vim.fn.filereadable(theme) == 1 and vim.fn.readfile(theme)[1] or "toge")
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.fn.writefile({ vim.g.colors_name }, theme)
+  end,
+})
+
+-- vim.cmd.colorscheme("toge")
 
 -- vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7d9b76", bg = "NONE" })
 
