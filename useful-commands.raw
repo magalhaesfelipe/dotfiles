@@ -1,0 +1,6 @@
+# Uninstall a package
+sudo pacman -Rs <package_name>
+
+# List packages
+pacman -Qm
+
