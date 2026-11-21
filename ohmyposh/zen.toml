@@ -82,7 +82,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = ' 刃'
+    template = ' 愛'
     background = 'transparent'
     type = 'text'
     style = 'plain'
