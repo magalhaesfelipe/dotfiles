@@ -26,6 +26,8 @@ return {
       highlighter = {
         auto_enable = true,
         lsp = true,
+        -- Limit live color scanning to style filetypes so TSX files don't lag on every keystroke/scroll
+        filetypes = { "css", "scss", "sass", "less", "html" },
       },
       inputs = {
         ccc.input.rgb,

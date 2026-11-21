@@ -5,12 +5,49 @@ return {
     { "Kaiser-Yang/blink-cmp-dictionary", dependencies = { "nvim-lua/plenary.nvim" } },
   },
   opts = {
-    keymap = { preset = "enter" }, -- Enter accepts, Ctrl+n/p to navigate
+    -- Disable completion on non-code / notes files (.txt, .log, .raw, .todo)
+    enabled = function()
+      if vim.bo.buftype == "prompt" or vim.b.completion == false then
+        return false
+      end
+
+      local disabled_filetypes = { "text", "plaintext", "log", "raw", "todo" }
+      if vim.tbl_contains(disabled_filetypes, vim.bo.filetype) then
+        return false
+      end
+
+      local bufname = vim.api.nvim_buf_get_name(0)
+      local ext = vim.fn.fnamemodify(bufname, ":e"):lower()
+      local disabled_extensions = { "txt", "log", "raw", "todo" }
+      if vim.tbl_contains(disabled_extensions, ext) then
+        return false
+      end
+
+      return true
+    end,
+    keymap = {
+      preset = "default",
+      ["<Tab>"] = { "select_and_accept", "snippet_forward", "fallback" },
+      ["<S-Tab>"] = { "snippet_backward", "fallback" },
+      ["<C-y>"] = { "select_and_accept" },
+      ["<CR>"] = { "fallback" }, -- Enter always inserts a newline and never accepts completion
+    },
     completion = {
-      trigger = { show_on_blocked_trigger_characters = {} },
+      trigger = {
+        -- Keep default blocked trigger characters (e.g. spaces/newlines)
+        -- to prevent unnecessary completion requests while typing
+      },
     },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "dictionary", "kitty_values" },
+      per_filetype = {
+        text = {},
+        plaintext = {},
+        log = {},
+        raw = {},
+        todo = {},
+      },
+      -- "buffer" removed so random words previously typed are never suggested
+      default = { "lsp", "path", "snippets", "dictionary", "kitty_values" },
       providers = {
         kitty_values = { name = "Kitty", module = "kitty.kitty_values", score_offset = 10 },
         dictionary = {

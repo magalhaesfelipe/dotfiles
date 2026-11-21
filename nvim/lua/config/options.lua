@@ -29,6 +29,7 @@ o.undofile = true
 o.updatetime = 250
 o.splitright = true
 o.splitbelow = true
+o.synmaxcol = 300 -- Prevents syntax scan freeze on long lines (common in TSX)
 
 o.showcmd = true
 o.showcmdloc = "last"

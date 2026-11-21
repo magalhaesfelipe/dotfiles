@@ -2,27 +2,21 @@ return {
   "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {
-      javascript = { "prettier" },
-      typescript = { "prettier" },
-      javascriptreact = { "prettier" },
-      typescriptreact = { "prettier" },
-      css = { "prettier" },
+      javascript = { "biome" },
+      typescript = { "biome" },
+      javascriptreact = { "biome" },
+      typescriptreact = { "biome" },
+      css = { "biome" },
+      json = { "biome" },
+      jsonc = { "biome" },
       html = { "prettier" },
-      json = { "prettier" },
       yaml = { "prettier" },
       markdown = { "prettier" },
     },
     formatters = {
-      prettier = {
-        cwd = require('conform.util').root_file({
-          "prettier.config.js",
-          "prettier.config.cjs",
-          "prettier.config.mjs",
-          ".prettierrc",
-          ".prettierrc.json",
-          "package.json"
-        })
-      }
+      biome = {
+        require_cwd = false,
+      },
     },
     log_level = vim.log.levels.DEBUG,
     -- format_on_save = {

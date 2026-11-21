@@ -7,6 +7,8 @@ return {
     keymaps = {
       ["<C-s>"] = false, -- Disable oil's default Ctrl+S split-screen mapping
       ["<leader>s"] = { "actions.select", opts = { vertical = true }, desc = "Open in split" },
+      ["q"] = "actions.close",
+      ["<Esc>"] = "actions.close",
       ["o"] = {
         callback = function()
           vim.api.nvim_buf_set_lines(0, -1, -1, false, { "" })

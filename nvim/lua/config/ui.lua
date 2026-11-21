@@ -10,7 +10,7 @@ vim.opt.fillchars = {
 
 vim.g.alabaster_transparent = true
 local theme = vim.fn.stdpath("config") .. "/theme"
-vim.cmd.colorscheme(vim.fn.filereadable(theme) == 1 and vim.fn.readfile(theme)[1] or "toge")
+vim.cmd.colorscheme(vim.fn.filereadable(theme) == 1 and vim.fn.readfile(theme)[1] or "toge-dark")
 
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
