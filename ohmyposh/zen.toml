@@ -16,7 +16,8 @@ final_space = true
   red     = '#cb7676'
   yellow  = '#e6cc77'
   cyan    = '#5eaab5'
-  pink    = '#d9739f'
+  pink    = '#231e18'
+  # pink    = '#d9739f'
 
 [secondary_prompt]
   template = '❯❯ '
