@@ -6,7 +6,7 @@ vim.cmd("highlight clear")
 if vim.fn.exists("syntax_on") == 1 then vim.cmd("syntax reset") end
 vim.o.termguicolors = true
 vim.o.background = "dark"
-vim.g.colors_name = "toge"
+vim.g.colors_name = "toge-dark"
 
 local c = {
   -- surfaces
@@ -278,6 +278,20 @@ local groups = {
   IblScope                   = { fg = "#454444" },
   MiniIndentscopeSymbol      = { fg = "#454444" },
   SnacksIndentScope          = { fg = "#997a56", nocombine = true },
+
+  -- Snacks Picker (grep / find files)
+  SnacksPickerDir            = { fg = c.blue },
+  SnacksPickerFile           = { fg = c.ui_fg, bold = true },
+  SnacksPickerPath           = { fg = c.blue },
+  SnacksPickerPathHidden     = { fg = c.muted },
+  SnacksPickerPathIgnored    = { fg = c.dim },
+  SnacksPickerMatch          = { fg = c.yellow, bold = true },
+  SnacksPickerRow            = { fg = c.orange },
+  SnacksPickerCol            = { fg = c.muted },
+
+  -- Lualine
+  lualine_a_insert           = { fg = c.bg_dark, bg = c.green, bold = true },
+  lualine_z_insert           = { fg = c.bg_dark, bg = c.green },
 
   -- which-key, lazy, misc
   WhichKey                   = { fg = c.green },

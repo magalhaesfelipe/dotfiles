@@ -278,6 +278,20 @@ local groups = {
   MiniIndentscopeSymbol      = { fg = "#a3956c" },
   SnacksIndentScope          = { fg = "#94702f", nocombine = true },
 
+  -- Snacks Picker (grep / find files)
+  SnacksPickerDir            = { fg = c.blue }, -- indigo pigment from toge palette; clear & readable on light bg
+  SnacksPickerFile           = { fg = c.ui_fg, bold = true },
+  SnacksPickerPath           = { fg = c.blue },
+  SnacksPickerPathHidden     = { fg = c.muted },
+  SnacksPickerPathIgnored    = { fg = c.dim },
+  SnacksPickerMatch          = { fg = c.green, bold = true },
+  SnacksPickerRow            = { fg = c.orange }, -- line numbers in ochre
+  SnacksPickerCol            = { fg = c.muted },
+
+  -- Lualine
+  lualine_a_insert           = { fg = c.bg, bg = c.green, bold = true },
+  lualine_z_insert           = { fg = c.bg, bg = c.green },
+
   -- which-key, lazy, misc
   WhichKey                   = { fg = c.green },
   WhichKeyDesc               = { fg = c.ui_fg },
