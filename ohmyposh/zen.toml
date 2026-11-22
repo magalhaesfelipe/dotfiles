@@ -4,30 +4,47 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 version = 3
 final_space = true
 
-# toge palette (same values as the kitty / Neovim theme)
-[palette]
-  bg      = '#1a1919'
-  bg_dark = '#121212'
-  fg      = '#e8dcc4'
-  green   = '#4d9375'
-  entity  = '#98bb6c'
-  blue    = '#6394bf'
-  orange  = '#d4976c'
-  red     = '#cb7676'
-  yellow  = '#e6cc77'
-  cyan    = '#5eaab5'
-  pink    = '#231e18'
-  # pink    = '#d9739f'
+# Automatically syncs with kitty's active theme (toge-light / toge-dark)
+[palettes]
+  template = '{{ if contains "light" (readFile (printf "%s/dotfiles/kitty/active-look.conf" .Env.HOME)) }}light{{ else }}dark{{ end }}'
+
+  [palettes.list.dark]
+    bg      = '#1a1919'
+    bg_dark = '#121212'
+    fg      = '#e8dcc4'
+    green   = '#4d9375'
+    entity  = '#98bb6c'
+    blue    = '#6394bf'
+    orange  = '#d4976c'
+    red     = '#cb7676'
+    yellow  = '#e6cc77'
+    cyan    = '#5eaab5'
+    pink    = '#d9739f'
+    prompt  = '#e9dbb4'
+
+  [palettes.list.light]
+    bg      = '#e9dbb4'
+    bg_dark = '#d9c898'
+    fg      = '#231e18'
+    green   = '#3a6b4a'
+    entity  = '#3d6a3a'
+    blue    = '#2b4f7a'
+    orange  = '#9a5420'
+    red     = '#a02f25'
+    yellow  = '#7a5a0c'
+    cyan    = '#2a6670'
+    pink    = '#8f3a5c'
+    prompt  = '#231e18'
 
 [secondary_prompt]
   template = '❯❯ '
-  foreground = 'p:pink'
+  foreground = 'p:prompt'
   background = 'transparent'
 
 [transient_prompt]
   template = '❯ '
   background = 'transparent'
-  foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:pink{{end}}']
+  foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:prompt{{end}}']
 
 [[blocks]]
   type = 'prompt'
@@ -35,7 +52,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = "{{ if .Segments.Git.HEAD }}<#121212,transparent>\ue0b6</>{{ end }} {{ .Path }} "
+    template = "{{ if .Segments.Git.HEAD }}<p:bg_dark,transparent>\ue0b6</>{{ end }} {{ .Path }} "
     foreground = 'p:entity'
     background = 'transparent'
     background_templates = ['{{ if .Segments.Git.HEAD }}p:bg_dark{{ end }}']
@@ -47,7 +64,7 @@ final_space = true
       style = 'full'
 
   [[blocks.segments]]
-    template = " \ue0a0 {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}{{ end }} <#121212>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>"
+    template = " \ue0a0 {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}{{ end }} <p:bg>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>"
     foreground = 'p:bg'
     background = 'p:orange'
     type = 'git'
@@ -87,7 +104,7 @@ final_space = true
     background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:pink{{end}}']
+    foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:prompt{{end}}']
 
     [blocks.segments.properties]
       cache_duration = 'none'
