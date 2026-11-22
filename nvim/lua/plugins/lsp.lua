@@ -61,13 +61,13 @@ return {
       require("mason-lspconfig").setup(opts)
     end,
   },
-  -- This is to stop nvim-lspconfig from re-enabling virtual text
+  -- Configure native Neovim diagnostics (floating window on hover, no shifting lines)
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      diagnostics = {
-        virtual_text = false,
-      },
-    },
+    opts = function(_, opts)
+      opts.diagnostics = opts.diagnostics or {}
+      opts.diagnostics.virtual_text = false
+      opts.diagnostics.virtual_lines = false
+    end,
   },
 }

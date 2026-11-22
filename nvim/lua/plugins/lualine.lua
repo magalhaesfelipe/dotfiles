@@ -1,23 +1,24 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = function()
-    local auto = require("lualine.themes.auto")
-    local is_dark = vim.o.background == "dark"
-    local green = is_dark and "#4d9375" or "#3a6b4a"
-    local fg = is_dark and "#121212" or "#e9dbb4"
-
-    -- Override insert mode so mode and timer stay in theme's mineral green instead of orange
-    auto.insert.a = { bg = green, fg = fg, gui = "bold" }
-    auto.insert.z = { bg = green, fg = fg }
-
-    return {
-      options = {
-        theme = auto,
-        globalstatus = true,
-        component_separators = "",
-        section_separators = { left = "\u{e0b0}", right = "\u{e0b2}" },
-      },
+  init = function()
+    -- Automatically reload lualine theme when switching between toge-light and toge-dark
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = function()
+        package.loaded["lualine.themes.auto"] = nil
+        pcall(function()
+          require("lualine").setup({ options = { theme = "auto" } })
+        end)
+      end,
+    })
+  end,
+  opts = {
+    options = {
+      theme = "auto",
+      globalstatus = true,
+      component_separators = "",
+      section_separators = { left = "\u{e0b0}", right = "\u{e0b2}" },
+    },
       sections = {
         lualine_a = {
           {
@@ -90,6 +91,5 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
-    }
-  end,
-}
+    },
+  }

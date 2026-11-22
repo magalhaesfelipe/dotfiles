@@ -1,17 +1,18 @@
 return {
   "b0o/incline.nvim",
-  dependencies = { "craftzdog/solarized-osaka.nvim" },
   event = "BufReadPre",
   priority = 1200,
+  init = function()
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = function()
+        if package.loaded["incline"] then
+          pcall(require("incline").refresh)
+        end
+      end,
+    })
+  end,
   config = function()
-    local colors = require("solarized-osaka.colors").setup()
     require("incline").setup({
-      highlight = {
-        groups = {
-          InclineNormal = { guibg = colors.magenta500, guifg = colors.base04 },
-          InclineNormalNC = { guifg = colors.violet500, guibg = colors.base03 },
-        },
-      },
       window = { margin = { vertical = 0, horizontal = 1 } },
       hide = {
         cursorline = true,
