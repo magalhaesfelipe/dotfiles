@@ -1,9 +1,13 @@
 [Unit]
 Description=keyd nav layer indicator
+PartOf=graphical-session.target
+After=graphical-session.target
 
 [Service]
 ExecStart=%h/.local/bin/keyd-nav-indicator
-Restart=on-failure
+Restart=always
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target

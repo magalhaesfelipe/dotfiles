@@ -11,3 +11,9 @@
 mkdir -p ~/.config && for dir in kitty nvim fastfetch; do
 ln -sfnT "$HOME/dotfiles/$dir" "$HOME/.config/$dir"
 done
+
+# keyd-nav indicator setup
+mkdir -p ~/.local/bin ~/.config/systemd/user
+ln -sf "$HOME/dotfiles/keyd-nav/.local/bin/keyd-nav-indicator" "$HOME/.local/bin/keyd-nav-indicator"
+ln -sf "$HOME/dotfiles/keyd-nav/.config/systemd/user/keyd-nav.service" "$HOME/.config/systemd/user/keyd-nav.service"
+
