@@ -234,6 +234,10 @@ local groups = {
   DiagnosticVirtualTextWarn  = { fg = c.orange, bg = "#e4cf9c" },
   DiagnosticVirtualTextInfo  = { fg = c.blue, bg = "#cfd3b8" },
   DiagnosticVirtualTextHint  = { fg = c.green, bg = "#cdd6ae" },
+  DiagnosticVirtualLinesError = { fg = c.red, bg = "#e3c4aa" },
+  DiagnosticVirtualLinesWarn  = { fg = c.orange, bg = "#e4cf9c" },
+  DiagnosticVirtualLinesInfo  = { fg = c.blue, bg = "#cfd3b8" },
+  DiagnosticVirtualLinesHint  = { fg = c.green, bg = "#cdd6ae" },
   DiagnosticUnnecessary      = { fg = c.muted }, -- unused variables/imports
 
   -- gitsigns
@@ -291,6 +295,10 @@ local groups = {
   -- Lualine
   lualine_a_insert           = { fg = c.bg, bg = c.green, bold = true },
   lualine_z_insert           = { fg = c.bg, bg = c.green },
+
+  -- Incline
+  InclineNormal              = { fg = c.fg, bg = c.bg_dark, bold = true },
+  InclineNormalNC            = { fg = c.dim, bg = c.bg_alt },
 
   -- which-key, lazy, misc
   WhichKey                   = { fg = c.green },
