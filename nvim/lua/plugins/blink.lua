@@ -27,10 +27,10 @@ return {
     end,
     keymap = {
       preset = "default",
-      ["<Tab>"] = { "select_and_accept", "snippet_forward", "fallback" },
+      ["<CR>"] = { "select_and_accept", "fallback" },
+      ["<Tab>"] = { "snippet_forward", "fallback" },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
       ["<C-y>"] = { "select_and_accept" },
-      ["<CR>"] = { "fallback" }, -- Enter always inserts a newline and never accepts completion
     },
     completion = {
       trigger = {
