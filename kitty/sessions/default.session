@@ -1,0 +1,14 @@
+# Tab 1: Code editor with a tall layout
+new_tab Editor
+layout tall
+cd ~/projects/maple
+launch nvim .
+
+# Tab 2: Server & Logs split horizontally
+new_tab Server
+layout horizontal
+cd ~/projects/maple
+launch bash -c "pnpm dev; exec bash"
+
+# Focus back on the first tab on startup
+focus_tab 0
