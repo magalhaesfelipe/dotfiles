@@ -38,8 +38,8 @@ map("n", "<leader>t", '<cmd>botright split | resize 12 | terminal "C:/Program Fi
   { desc = "OPEN SPLIT TERMINAL" })
 
 -- Move current line up/down in Normal mode
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { silent = true })
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { silent = true })
+map("n", "<A-k>", ":m .-2<CR>==", { silent = true })
+map("n", "<A-j>", ":m .+1<CR>==", { silent = true })
 
 -- Move selected block up/down in Visual mode
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
@@ -73,3 +73,13 @@ map("n", "<leader>fg", function() require("fff").live_grep() end, { desc = "LIVE
 map("n", "<leader>fw", function()
   require("fff").live_grep({ query = vim.fn.expand("<cword>") })
 end, { desc = "GREP WORD UNDER CURSOR" })
+
+--- <leader>r: replace the word under the cursor, confirming each match
+--   \<  \>        whole word only
+--   <C-r><C-w>    inserts the word under the cursor
+--   //            type the new word between the slashes
+--   g             all matches per line
+--   c             confirm each: y = replace, n = skip, a = all remaining, q = quit
+map('n', '<leader>r', [[:%s/\<<C-r><C-w>\>//gc<Left><Left><Left>]],
+  { desc = 'Replace word under cursor (confirm each: y/n/a/q)' }
+)
