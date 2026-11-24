@@ -1,0 +1,15 @@
+
+# Tab 1: Text editor
+new_tab Dotfiles 
+layout tall
+cd ~/dotfiles
+launch nvim .
+
+# Tab 2: Todo list
+new_tab To-do
+layout horizontal
+cd ~/todo
+launch nvim .  
+
+# Focus back on the first tab on startup
+focus_tab 0
