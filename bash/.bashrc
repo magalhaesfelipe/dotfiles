@@ -5,13 +5,6 @@
 # (_)_.__/ \__,_|___/_| |_|_|  \___|
 # 
 
-# It's possible to define a custom configuration by adding
-# files in ~/.config/bashrc 
-# or by creating a folder ~/.config/bashrc/custom
-# with copies of files from ~/.config/bashrc 
-# And also create a .bashrc_custom file in the home directory
-# -----------------------------------------------------
-
 # -----------------------------------------------------
 # Load modular configuration
 # -----------------------------------------------------
@@ -35,3 +28,6 @@ fi
 
 
 export PATH="/home/y/.local/bin:$PATH"
+
+eval "$(zoxide init bash --cmd s)"
+

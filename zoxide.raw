@@ -1,0 +1,5 @@
+On bash, after the PATH export:
+
+export PATH="/home/y/.local/bin:$PATH"
+
+eval "$(zoxide init bash --cmd s)"
