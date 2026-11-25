@@ -2,7 +2,7 @@ local function convert_to(output)
   return function()
     local ccc = require("ccc")
     require("ccc.config").options.convert = {
-      { ccc.picker.hex, output },
+      { ccc.picker.hex,     output },
       { ccc.picker.css_rgb, output },
       { ccc.picker.css_hsl, output },
     }
@@ -17,8 +17,8 @@ return {
     { "<leader>cp", "<cmd>CccPick<cr>", desc = "Color picker" },
     { "<leader>cc", "<cmd>CccConvert<cr>", desc = "Convert color format" },
     { "<leader>ph", function() convert_to(require("ccc").output.hex)() end, desc = "Color → hex" },
-    { "<leader>pr", function() convert_to(require("ccc").output.css_rgb)() end,  desc = "Color → rgb" },
-    { "<leader>pl", function() convert_to(require("ccc").output.css_hsl)() end,  desc = "Color → hsl" },
+    { "<leader>pr", function() convert_to(require("ccc").output.css_rgb)() end, desc = "Color → rgb" },
+    { "<leader>pl", function() convert_to(require("ccc").output.css_hsl)() end, desc = "Color → hsl" },
   },
   opts = function()
     local ccc = require("ccc")
@@ -27,15 +27,15 @@ return {
         auto_enable = true,
         lsp = true,
         -- Limit live color scanning to style filetypes so TSX files don't lag on every keystroke/scroll
-        filetypes = { "css", "scss", "sass", "less", "html" },
+        filetypes = { "css", "scss", "sass", "less", "html", "typescript" },
       },
       inputs = {
         ccc.input.rgb,
         ccc.input.hsl,
       },
       pickers = {
-       ccc.picker.hex,
-       ccc.picker.css_hsl,
+        ccc.picker.hex,
+        ccc.picker.css_hsl,
       },
       outputs = {
         ccc.output.hex,
