@@ -12,3 +12,7 @@ List all directories with scores  | zoxide query -ls
 List directories only             | zoxide query -l
 Remove one                        | zoxide remove ~/plan
 Database location (Linux)         | ~/.local/share/zoxide/db.zoxide
+
+# Directories to add
+
+zoxide add ~/plan ~/books ~/dotfiles ~/projects ~/audio
