@@ -1,3 +1,6 @@
+# Installation
+sudo pacman -S zoxide
+
 On .bashrc after the PATH export, add:
 
 eval "$(zoxide init bash --cmd s)"
