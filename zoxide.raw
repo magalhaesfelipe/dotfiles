@@ -1,5 +1,11 @@
-On bash, after the PATH export:
-
-export PATH="/home/y/.local/bin:$PATH"
+On .bashrc after the PATH export, add:
 
 eval "$(zoxide init bash --cmd s)"
+
+Actions                           | Command
+----------------------------------|----------------------------------
+Add a directory                   | zoxide add ~/plan
+List all directories with scores  | zoxide query -ls
+List directories only             | zoxide query -l
+Remove one                        | zoxide remove ~/plan
+Database location (Linux)         | ~/.local/share/zoxide/db.zoxide
