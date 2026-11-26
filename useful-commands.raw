@@ -1,3 +1,6 @@
+# Install packages
+sudo pacman -S <program_name> 
+
 # Uninstall a package
 sudo pacman -Rs <package_name>
 
