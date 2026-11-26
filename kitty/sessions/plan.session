@@ -1,0 +1,8 @@
+# Tab 0: Plan  
+new_tab .plan
+layout tall
+cd ~/plan/
+launch nvim .plan
+
+# Focus back on the first tab on startup
+focus_tab 0
