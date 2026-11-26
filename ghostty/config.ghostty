@@ -1,0 +1,21 @@
+window-decoration = false
+gtk-titlebar = false
+gtk-tabs-location = top
+adw-toolbar-style = flat
+gtk-custom-css = tabs.css
+window-padding-balance = false
+window-padding-y = 2,0
+window-padding-x = 10
+window-padding-color = extend
+window-show-tab-bar = always
+theme = toge-light
+
+# Solid non-blinking block cursor
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# Keybinds
+keybind = ctrl+backspace=text:\x17
+keybind = ctrl+tab=previous_tab
+keybind = ctrl+shift+tab=next_tab

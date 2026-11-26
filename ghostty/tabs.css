@@ -1,0 +1,75 @@
+/* Tab bar container */
+tabbar,
+tabbar > revealer > box,
+tabbar tabbox,
+tabbar tabbox > scrolledwindow,
+tabbar tabbox > scrolledwindow > viewport,
+tabbar tabbox > scrolledwindow > viewport > box {
+	background-color: #c3b488;
+	min-height: 16px;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+	border-radius: 0px;
+	border-spacing: 0px;
+	box-shadow: none;
+}
+
+/* Kill internal AdwTabBox wrapper margins/padding between tabs */
+tabbar tabbox * {
+	margin: 0px;
+	padding: 0px;
+	border-radius: 0px;
+	outline: none;
+	box-shadow: none;
+	background-image: none;
+}
+
+/* Base tab (inactive) */
+tabbar tabbox tab {
+	background-color: #e0d0a4;
+	color: #968766;
+	font-weight: normal;
+	font-size: 10px;
+	min-height: 16px;
+	margin: 0px;
+	padding: 0px 10px;
+	border: none;
+	border-right: 1px solid #c3b488;
+}
+
+/* Remove height floor from label and icons */
+tabbar tabbox tab label,
+tabbar tabbox tab image {
+	min-height: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Hover state */
+tabbar tabbox tab:hover {
+	background-color: #d9c898;
+	color: #4a4034;
+}
+
+/* Selected / active tab */
+tabbar tabbox tab:selected,
+tabbar tabbox tab:checked,
+tabbar tabbox tab:selected:hover,
+tabbar tabbox tab:checked:hover {
+	background-color: #cbb986;
+	color: #4a4034;
+	font-weight: bold;
+}
+
+/* Close button */
+tabbar tabbox tab button,
+tabbar tabbox tab button:hover,
+tabbar tabbox tab button:active {
+	min-height: 10px;
+	min-width: 10px;
+	padding: 0px;
+	margin: 0px 0px 0px 2px;
+	border-radius: 0px;
+	background: transparent;
+}

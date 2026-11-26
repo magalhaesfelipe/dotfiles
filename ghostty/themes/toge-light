@@ -1,0 +1,32 @@
+# toge-light — light version of the Toge theme for Ghostty
+
+# Base
+foreground = #2b2a28
+background = #e9dbb4
+selection-foreground = #2b2a28
+selection-background = #cfc4a6
+
+# Cursor
+cursor-color = #4a4945
+cursor-text = #e6dfcc
+
+# Split borders
+split-divider-color = #cfc7b0
+
+# Palette (0-15)
+palette = 0=#393a34
+palette = 1=#b04a4a
+palette = 2=#2e8a62
+palette = 3=#8a8545
+palette = 4=#b87444
+palette = 5=#b8386a
+palette = 6=#5c7e8c
+palette = 7=#a9a493
+palette = 8=#777777
+palette = 9=#b04a4a
+palette = 10=#3a7a5f
+palette = 11=#8a8545
+palette = 12=#b87444
+palette = 13=#b8527f
+palette = 14=#5c7e8c
+palette = 15=#5a5850
