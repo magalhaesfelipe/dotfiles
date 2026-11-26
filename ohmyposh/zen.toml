@@ -49,7 +49,7 @@ final_space = true
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true
+  newline = false
 
   [[blocks.segments]]
     template = "{{ if .Segments.Git.HEAD }}<p:bg_dark,transparent>\ue0b6</>{{ end }} {{ .Path }} "
