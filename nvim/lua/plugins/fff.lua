@@ -1,12 +1,11 @@
 return {
-  "dmtrKovalenko/fff.nvim",
+  "dmtrKovalenko/fff",
   build = function()
     require("fff.download").download_or_build_binary()
   end,
   opts = {
     hl = {
-      winhl =
-      "Normal:FFFNormal,NormalFloat:FFFNormal,FloatBorder:FFFBorder,FloatTitle:FFFTitle,SignColumn:FFFNormal,FoldColumn:FFFNormal,EndOfBuffer:FFFNormal",
+      winhl = "Normal:FFFNormal,NormalFloat:FFFNormal,FloatBorder:FFFBorder,FloatTitle:FFFTitle,SignColumn:FFFNormal,FoldColumn:FFFNormal,EndOfBuffer:FFFNormal",
     },
   },
   lazy = false,
