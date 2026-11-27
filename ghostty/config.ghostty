@@ -17,5 +17,5 @@ shell-integration-features = no-cursor
 
 # Keybinds
 keybind = ctrl+backspace=text:\x17
-keybind = ctrl+tab=previous_tab
-keybind = ctrl+shift+tab=next_tab
+keybind = ctrl+tab=next_tab
+keybind = ctrl+shift+tab=previous_tab
