@@ -1,3 +1,6 @@
+# Font
+font-family = JetBrainsMono Nerd Font
+
 window-decoration = false
 gtk-titlebar = false
 gtk-tabs-location = top
