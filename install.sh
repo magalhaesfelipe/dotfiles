@@ -17,6 +17,7 @@ SKIP_PACKAGES=false
 SKIP_AUR=false
 SKIP_SYMLINK=false
 SKIP_NVIM=false
+SKIP_KEYD=false
 
 PACMAN_PACKAGES=(
   # Terminal & shell
@@ -59,6 +60,14 @@ PACMAN_PACKAGES=(
   # Nerd Fonts (eza icons, oh-my-posh, lualine, oil, devicons)
   ttf-jetbrains-mono-nerd
   ttf-nerd-fonts-symbols
+
+  # Keyd & nav mode indicator overlay (GTK3 + Wayland layer-shell)
+  keyd
+  gtk3
+  gtk-layer-shell
+  python-gobject
+  python-cairo
+  libnotify
 )
 
 AUR_PACKAGES=(
@@ -116,6 +125,7 @@ Options:
   --skip-aur         Skip AUR package installations (oh-my-posh-bin)
   --skip-symlink     Skip creating config symlinks
   --skip-nvim        Skip headless Neovim bootstrap (Lazy/Mason/Treesitter)
+  --skip-keyd        Skip keyd & nav mode indicator setup
   -h, --help         Show this help message
 EOF
 }
@@ -128,6 +138,7 @@ parse_args() {
       --skip-aur)       SKIP_AUR=true ;;
       --skip-symlink)   SKIP_SYMLINK=true ;;
       --skip-nvim)      SKIP_NVIM=true ;;
+      --skip-keyd)      SKIP_KEYD=true ;;
       -h|--help)        usage; exit 0 ;;
       *)                err "Unknown option: $1"; usage; exit 1 ;;
     esac
@@ -242,6 +253,27 @@ bootstrap_nvim() {
 }
 
 # -----------------------------------------------------------------------------
+# Step 5: Setup keyd & Nav Mode Indicator
+# -----------------------------------------------------------------------------
+setup_keyd() {
+  section "Setting up keyd & nav mode indicator"
+  local keyd_script="$DOTFILES_DIR/keyd/install.sh"
+  if [[ ! -x "$keyd_script" ]]; then
+    warn "$keyd_script not found or not executable; skipping keyd setup."
+    return 0
+  fi
+
+  local args=(--skip-packages)
+  if $DRY_RUN; then
+    args+=(--dry-run)
+  fi
+  if $SKIP_SYMLINK; then
+    args+=(--skip-symlink)
+  fi
+  "$keyd_script" "${args[@]}"
+}
+
+# -----------------------------------------------------------------------------
 # Main
 # -----------------------------------------------------------------------------
 main() {
@@ -261,6 +293,10 @@ main() {
 
   if ! $SKIP_NVIM; then
     bootstrap_nvim
+  fi
+
+  if ! $SKIP_KEYD; then
+    setup_keyd
   fi
 
   printf "\n"
