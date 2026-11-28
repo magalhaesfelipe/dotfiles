@@ -1,0 +1,109 @@
+// Zed keymap (ported from ~/dotfiles/nvim)
+[
+	{
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-s": "workspace::Save",
+			"ctrl-\\": "terminal_panel::ToggleFocus",
+			"ctrl-b": "workspace::ToggleRightDock",
+			"ctrl-alt-b": "workspace::ToggleLeftDock",
+		},
+	},
+	{
+		"context": "Editor && vim_mode == insert",
+		"bindings": {
+			"j k": "vim::NormalBefore",
+			"ctrl-b": "workspace::ToggleRightDock",
+			"ctrl-alt-b": "workspace::ToggleLeftDock",
+		},
+	},
+	{
+		"context": "Editor && vim_mode == normal && !menu",
+		"bindings": {
+			"ctrl-b": "workspace::ToggleRightDock",
+			"ctrl-alt-b": "workspace::ToggleLeftDock",
+
+			// File & pane actions
+			"space w": "workspace::Save",
+			"space q": "pane::CloseActiveItem",
+			"ctrl-backspace": "zed::OpenSettings",
+
+			// Window / pane navigation
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-j": "workspace::ActivatePaneDown",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-l": "workspace::ActivatePaneRight",
+
+			// Editing helpers
+			"ctrl-a": "editor::SelectAll",
+			"ctrl-x": "editor::Cut",
+			"alt-k": "editor::MoveLineUp",
+			"alt-j": "editor::MoveLineDown",
+
+			// Layout, terminal & file explorer
+			"space m": "workspace::ToggleCenteredLayout",
+			"space t": "workspace::NewTerminal",
+			"-": "pane::RevealInProjectPanel",
+
+			// Diagnostics
+			"space d": "editor::Hover",
+			"[ d": "editor::GoToPreviousDiagnostic",
+			"] d": "editor::GoToDiagnostic",
+
+			// File finder, grep & replace (fff.lua + keymaps.lua)
+			"f f": "file_finder::Toggle",
+			"f g": "pane::DeploySearch",
+			"space f g": "pane::DeploySearch",
+			"space f w": "pane::DeploySearch",
+			"space r": "buffer_search::DeployReplace",
+
+			// Git hunks (gitsigns.lua + keymaps.lua)
+			"] h": "editor::GoToHunk",
+			"[ h": "editor::GoToPreviousHunk",
+			"space h s": "git::ToggleStaged",
+			"space h r": "git::Restore",
+			"space h shift-s": "git::StageAll",
+			"space h shift-r": "git::RestoreFile",
+			"space h u": "git::UnstageAndNext",
+			"space h p": "editor::ToggleSelectedDiffHunks",
+			"space h i": "editor::ToggleSelectedDiffHunks",
+			"space t d": "editor::ExpandAllDiffHunks",
+			"space h b": "git::Blame",
+			"space h d": "git::Diff",
+		},
+	},
+	{
+		"context": "Editor && vim_mode == visual && !menu",
+		"bindings": {
+			"ctrl-b": "workspace::ToggleRightDock",
+			"ctrl-alt-b": "workspace::ToggleLeftDock",
+
+			// Move selected lines
+			"shift-j": "editor::MoveLineDown",
+			"shift-k": "editor::MoveLineUp",
+			"alt-j": "editor::MoveLineDown",
+			"alt-k": "editor::MoveLineUp",
+
+			// Editing helpers
+			"ctrl-c": "editor::Copy",
+			"ctrl-x": "editor::Cut",
+
+			// Git hunk actions on selection
+			"space h s": "git::ToggleStaged",
+			"space h r": "git::Restore",
+		},
+	},
+	{
+		"context": "ProjectPanel && not_editing",
+		"bindings": {
+			// Oil-like explorer bindings
+			"q": "workspace::ToggleRightDock",
+			"escape": "workspace::ToggleRightDock",
+			"o": "project_panel::NewFile",
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-j": "workspace::ActivatePaneDown",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-l": "workspace::ActivatePaneRight",
+		},
+	},
+]
